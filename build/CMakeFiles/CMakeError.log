@@ -1,0 +1,32 @@
+Determining if the strtod_l exist failed with the following output:
+Change Dir: /home/jerry/Documents/c++/day01/3.1.3-mysql_connpool/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c37fc/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c37fc.dir/build.make CMakeFiles/cmTC_c37fc.dir/build
+gmake[1]: Entering directory '/home/jerry/Documents/c++/day01/3.1.3-mysql_connpool/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c37fc.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_c37fc.dir/CheckSymbolExists.c.o -c /home/jerry/Documents/c++/day01/3.1.3-mysql_connpool/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/jerry/Documents/c++/day01/3.1.3-mysql_connpool/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/jerry/Documents/c++/day01/3.1.3-mysql_connpool/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘strtod_l’ undeclared (first use in this function); did you mean ‘strtoull’?
+    8 |   return ((int*)(&strtod_l))[argc];
+      |                   ^~~~~~~~
+      |                   strtoull
+/home/jerry/Documents/c++/day01/3.1.3-mysql_connpool/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+gmake[1]: *** [CMakeFiles/cmTC_c37fc.dir/build.make:78: CMakeFiles/cmTC_c37fc.dir/CheckSymbolExists.c.o] Error 1
+gmake[1]: Leaving directory '/home/jerry/Documents/c++/day01/3.1.3-mysql_connpool/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_c37fc/fast] Error 2
+
+
+File /home/jerry/Documents/c++/day01/3.1.3-mysql_connpool/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strtod_l
+  return ((int*)(&strtod_l))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
